@@ -1,0 +1,21 @@
+COURSE UPDATE : Exclude dependency on jackson-dataformat-xml
+OPEN BUG with spring-cloud-starter-netflix-eureka-client
+
+It uses jackson-dataformat-xml.
+
+Hence, you would see XML responses instead of JSON responses in the browser.
+
+If you want to see JSON responses, you can add an exclusion for jackson-dataformat-xml dependency.
+
+You need to make this change in 2 POM.XML files - Currency Exchange and Currency Conversion
+
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	<exclusions>
+		<exclusion>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</exclusion>
+	</exclusions>
+</dependency>

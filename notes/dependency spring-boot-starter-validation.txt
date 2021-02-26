@@ -1,0 +1,10 @@
+COURSE UPDATE : Add dependency spring-boot-starter-validation
+If you are making use of Spring Boot Release (> 2.3.0) make sure to add the following dependency to your pom.xml (We are going to implement validations in next step):
+
+<dependency>    
+    <groupId>org.springframework.boot</groupId>    
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+
+
+RECOMMENDATION

@@ -1,0 +1,16 @@
+Fastest Approach to Solve All Your Exceptions
+If you are using Intellij or you are using Java 9+ or you are facing a ClassNotFoundException, we are here to help. This 50-page troubleshooting guide and faq is our way of thanking you for choosing to learn from in28Minutes. It provides solutions for 200 FAQ and Frequently faced Problems.
+
+Here's the Quick Start with Top 10 FAQ
+
+https://github.com/in28minutes/in28minutes-initiatives/blob/master/The-in28Minutes-TroubleshootingGuide-And-FAQ/quick-start.md
+
+We love all our 150,000 learners. We want to help you in every way possible.We do not want you to get stuck because of a simple error.
+
+
+
+SNAPSHOT, M1, M2, M3, M4 releases are typically WORK IN PROGRESS. The Spring team is still working on them. We recommend NOT using them.
+
+
+
+RECOMMENDED VERSION: 2.3.1 +   (CHOOSE IN NEXT STEP)

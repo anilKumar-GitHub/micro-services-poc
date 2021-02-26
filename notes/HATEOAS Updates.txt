@@ -1,0 +1,53 @@
+COURSE UPDATE : HATEOAS Updates
+VERSION UPDATES FOR NEXT LECTURE
+
+There are a few modifications of HATEOAS in the latest release of Spring HATEOAS 1.0.0:
+
+Option 1 : Spring Boot Release >= 2.2.0
+Complete code: https://github.com/in28minutes/spring-microservices/blob/master/02.restful-web-services/2.3.1.RELEASE-upgrade.md#srcmainjavacomin28minutesrestwebservicesrestfulwebservicesuseruserresourcejava
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+ 
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+ 
+@RestController
+public class UserJPAResource {
+ 
+ 
+	@GetMapping("/users/{id}")
+	public EntityModel<User> retrieveUser(@PathVariable int id) {
+		User user = service.findOne(id);
+		
+		if(user==null)
+			throw new UserNotFoundException("id-"+ id);
+		
+		
+		//"all-users", SERVER_PATH + "/users"
+		//retrieveAllUsers
+		EntityModel<User> resource = EntityModel.of(user);
+		
+		WebMvcLinkBuilder linkTo = 
+				linkTo(methodOn(this.getClass()).retrieveAllUsers());
+		
+		resource.add(linkTo.withRel("all-users"));
+		
+		//HATEOAS
+		
+		return resource;
+	}
+
+
+Option 2: Older versions
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+import org.springframework.hateoas.Resource;
+import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+ 
+Resource<User> resource = new Resource<User>(user);
+ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
+resource.add(linkTo.withRel("all-users"));
+return resource;
+
+

@@ -1,0 +1,28 @@
+Updates to Step 40 : Use spring-cloud-starter-zipkin and spring-rabbit
+The dependencies are ever-changing with Spring Cloud and Spring Boot.
+
+If you are using Spring Boot Release >= 2.1.*, you would need to use spring-cloud-starter-zipkin and spring-rabbit instead of spring-cloud-sleuth-zipkin and spring-cloud-starter-bus-amqp.
+
+You would need to make this change in THREE pom.xmls - in currency-conversion-service, currency-exchange-service, and zuul-api-gateway projects
+
+New Dependencies
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+		</dependency>
+OLD Dependencies to be Replaced
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>

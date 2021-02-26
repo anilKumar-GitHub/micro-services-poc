@@ -1,0 +1,16 @@
+COURSE UPDATE : Disable XML Format Support
+RECOMMENDATION: Disable XML Support
+
+Remove this from pom.xml
+
+<dependency>
+	<groupId>com.fasterxml.jackson.dataformat</groupId>
+	<artifactId>jackson-dataformat-xml</artifactId>
+</dependency>
+
+
+WHY?
+PROBLEM: Browsers give preference to XML over JSON (They send Accept header with application/xml). 
+
+However, I prefer seeing responses with JSON in the browser (For most people REST = JSON)
+

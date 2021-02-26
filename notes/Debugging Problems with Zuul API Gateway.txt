@@ -1,0 +1,9 @@
+Debugging Problems with Zuul API Gateway
+Debugging microservices problems can be difficult as there are multiple components involved.
+
+Step by Step instructions are provided in the troubleshooting guide to help you troubleshoot frequently occurring problems.
+
+Using Chrome Browser is recommended.
+
+https://github.com/in28minutes/in28minutes-initiatives/tree/master/The-in28Minutes-TroubleshootingGuide-And-FAQ#debugging-problems-with-zuul-api-gateway
+
